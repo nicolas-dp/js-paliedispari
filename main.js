@@ -4,7 +4,7 @@ Creare una funzione per capire
 se la parola inserita è palindroma */
 
 const parolaPalindroma = prompt("Inserire una parola");
- 
+
 
 /**
  * 
@@ -15,19 +15,19 @@ function palindroma(parolaPalindroma) {
     //Prendiamo la lunghezza della parola passata dall'utente
     let lunghezza = parolaPalindroma.length;
     //Andiamo a dividere la lunghezza a metà e la mettiamo in una variabile middle
-    let middle = Math.floor(lunghezza/2);
+    let middle = Math.floor(lunghezza / 2);
 
     //Tramite ciclo for, cicliamo per verificare l'uguaglianza dei caratteri
-    for ( let i = 0; i < middle; i++ ) {
+    for (let i = 0; i < middle; i++) {
         //Se le prime due lettere sono diverse dalle ultime due lettere
         if (parolaPalindroma[i] !== parolaPalindroma[lunghezza - 1 - i]) {
             return `La parola ${parolaPalindroma.toUpperCase()} non è palindroma`;
-        }        
+        }
     }
-   //Se le prime due lettere sono ugali alle ultime due lettere 
-   return `La parola ${parolaPalindroma.toUpperCase()} è palindroma`;
-    
-} 
+    //Se le prime due lettere sono ugali alle ultime due lettere 
+    return `La parola ${parolaPalindroma.toUpperCase()} è palindroma`;
+
+}
 
 //Richiamo della funzione palindroma
 console.log(palindroma(parolaPalindroma));
@@ -60,9 +60,9 @@ if (pari_dispari > 5 || pari_dispari < 1) {
  * @param {number} - max Il numero massimo 5
  * @returns {number} 
  */
- function numeroCasuale(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) ) + min;
-  }
+function numeroCasuale(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 //Richiamo funzione per genereare il numero casuale
 let random_number = numeroCasuale(1, 5)
@@ -77,7 +77,7 @@ somma += random_number + numero_utente;
  * @returns - true("è PARI") or false ("è DISPARI")
  */
 function sePariDispari(sum) {
-    
+
     if (sum % 2 == 0) {
         return true;
     } else {
@@ -93,7 +93,9 @@ console.log(`La somma dei due numeri è: ${sePariDispari(somma)}`);
 
 if (sePariDispari(somma) == true && pari_dispari == "pari") {
     console.log("HAI VINTO");
-} else  {
+} else if (sePariDispari(somma) == false && pari_dispari == "dispari") {
+    console.log("HAI VINTO");
+} else {
     console.log("HAI PERSO");
 }
 
